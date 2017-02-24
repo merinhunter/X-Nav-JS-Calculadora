@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     <title>Calculadora binaria simple</title>
+     <style type="text/css" media="screen">
+       body {
+         margin-left:0.5em;
+         margin-top:1em;
+       }
+
+       a {
+         padding:.4em;
+         margin-right: 0.5em;
+         border-radius: 4px;
+         border: 2px solid grey;
+         background-color: white;
+         color: black;
+         text-decoration: none;
+       }
+
+       #display {
+         padding: .4em;
+         margin-right: 0.5em;
+         width: 135px;
+         height: 19px;
+         border-radius: 4px;
+         border: 2px solid grey;
+         background-color: black;
+         color: white;
+         text-align: right;
+       }
+     </style>
+     <script type="text/javascript" charset="utf-8">
+       var operand;
+
+       function setDisplay(e) {
+         display = document.getElementById('display');
+         display.innerHTML = e;
+       }
+
+       function storeDisplay() {
+         display = document.getElementById('display');
+         operand = display.innerHTML;
+         display.innerHTML = '';
+       }
+
+       function add() {
+         display = document.getElementById('display');
+         op = display.innerHTML;
+
+         display.innerHTML = operand^op;
+       }
+     </script>
+   </head>
+   <body>
+     <p>
+       <a href="javascript:setDisplay(1)">1</a>
+       <a href="javascript:setDisplay(0)">0</a>
+       <a href="javascript:storeDisplay()">+</a>
+       <a href="javascript:add()">=</a>
+     </p>
+     <div id="display"></div>
+   </body>
+</html>
